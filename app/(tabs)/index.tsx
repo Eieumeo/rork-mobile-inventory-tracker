@@ -14,7 +14,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View style={styles.logoContainer}>
           <Image 
-            source="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/World_Scout_Emblem_1955.svg/1200px-World_Scout_Emblem_1955.svg.png"
+            source="https://i.imgur.com/Yx3oUVk.png"
             style={styles.scoutLogo}
             contentFit="contain"
           />
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   scoutLogo: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
     marginBottom: 8,
   },
   scoutText: {
