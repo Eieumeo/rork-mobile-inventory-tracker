@@ -12,7 +12,7 @@ export default function ScanScreen() {
   const [permission, requestPermission] = useCameraPermissions();
   const [facing, setFacing] = useState<CameraType>('back');
   const [scanned, setScanned] = useState(false);
-  const { getItemByBarcode, items } = useInventoryStore();
+  const { getItemByBarcode } = useInventoryStore();
 
   useEffect(() => {
     requestPermission();
@@ -47,33 +47,8 @@ export default function ScanScreen() {
           [{ text: 'OK', onPress: () => setScanned(false) }]
         );
       }
-    } else if (returnTo === 'add-item') {
-      // For add-item flow
-      if (existingItem) {
-        Alert.alert(
-          'Item Already Exists',
-          `This barcode belongs to "${existingItem.name}"`,
-          [
-            { 
-              text: 'View Item', 
-              onPress: () => router.push({
-                pathname: `/item/${existingItem.id}`
-              })
-            },
-            { 
-              text: 'Scan Again', 
-              onPress: () => setScanned(false) 
-            }
-          ]
-        );
-      } else {
-        router.push({
-          pathname: '/add-item',
-          params: { barcode: data }
-        });
-      }
     } else {
-      // General scan (from home screen)
+      // For add-item flow or general scan
       if (existingItem) {
         Alert.alert(
           'Item Found',

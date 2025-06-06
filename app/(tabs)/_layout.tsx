@@ -2,6 +2,8 @@ import React from "react";
 import { Tabs } from "expo-router";
 import Colors from "@/constants/colors";
 import { Home, Package, Settings } from "lucide-react-native";
+import HomeButton from "@/components/HomeButton";
+import { View, StyleSheet } from 'react-native';
 
 export default function TabLayout() {
   return (
@@ -20,6 +22,11 @@ export default function TabLayout() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
+        headerRight: () => (
+          <View style={styles.headerRight}>
+            <HomeButton />
+          </View>
+        ),
       }}
     >
       <Tabs.Screen
@@ -46,3 +53,10 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  headerRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});
