@@ -5,8 +5,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { StatusBar } from 'expo-status-bar';
 import Colors from '@/constants/colors';
-import HomeButton from '@/components/HomeButton';
-import { View, StyleSheet } from 'react-native';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { trpc, trpcClient } from "@/lib/trpc";
 
@@ -68,11 +66,6 @@ function RootLayoutNav() {
         contentStyle: {
           backgroundColor: Colors.background,
         },
-        headerRight: () => (
-          <View style={styles.headerRight}>
-            <HomeButton />
-          </View>
-        ),
       }}
     >
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -118,10 +111,3 @@ function RootLayoutNav() {
     </Stack>
   );
 }
-
-const styles = StyleSheet.create({
-  headerRight: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-});
