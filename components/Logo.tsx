@@ -15,7 +15,7 @@ export default function Logo({ size = 100, color = "#8A2BE2", style, showText = 
   return (
     <View style={[styles.container, style]}>
       <Image 
-        source={{ uri: 'https://i.imgur.com/Rl8Nt5j.png' }} 
+        source={{ uri: 'https://www.dorsetscouts.org.uk/wp-content/uploads/Scouts-Logo.png' }} 
         style={{ width: logoSize, height: logoSize }}
         resizeMode="contain"
       />
