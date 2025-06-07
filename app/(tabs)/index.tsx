@@ -5,6 +5,7 @@ import { PlusCircle, SendToBack, Package, Barcode } from 'lucide-react-native';
 import { Image } from 'expo-image';
 import Button from '@/components/Button';
 import Colors from '@/constants/colors';
+import Logo from '@/components/Logo';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -13,11 +14,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.logoContainer}>
-          <Image 
-            source="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/World_Scout_Emblem_1955.svg/1200px-World_Scout_Emblem_1955.svg.png"
-            style={styles.scoutLogo}
-            contentFit="contain"
-          />
+          <Logo size={120} color="#8A2BE2" style={styles.scoutLogo} />
           <Text style={styles.scoutText}>Scouts</Text>
         </View>
         
@@ -77,8 +74,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   scoutLogo: {
-    width: 120,
-    height: 120,
     marginBottom: 8,
   },
   scoutText: {
