@@ -14,8 +14,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.logoContainer}>
-          <Logo size={120} color="#8A2BE2" style={styles.scoutLogo} />
-          <Text style={styles.scoutText}>Scouts</Text>
+          <Logo size={180} color="#8A2BE2" style={styles.scoutLogo} />
         </View>
         
         <Text style={styles.title}>Inventory Tracker</Text>
@@ -75,12 +74,6 @@ const styles = StyleSheet.create({
   },
   scoutLogo: {
     marginBottom: 8,
-  },
-  scoutText: {
-    fontSize: 36,
-    fontWeight: 'bold',
-    color: '#8A2BE2', // Purple color for Scouts
-    marginTop: -8,
   },
   title: {
     fontSize: 28,
